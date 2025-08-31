@@ -6,6 +6,81 @@
     <title>ShopEase - Online Shopping</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ...existing styles... */
+        .cart-sidebar {
+            position: fixed;
+            top: 0;
+            right: -350px;
+            width: 350px;
+            height: 100%;
+            background: #fff;
+            box-shadow: -2px 0 10px rgba(0,0,0,0.15);
+            z-index: 2000;
+            transition: right 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+        .cart-sidebar.active {
+            right: 0;
+        }
+        .cart-header {
+            padding: 20px;
+            font-size: 20px;
+            font-weight: bold;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .cart-items {
+            flex: 1;
+            overflow-y: auto;
+            padding: 20px;
+        }
+        .cart-footer {
+            padding: 20px;
+            border-top: 1px solid #eee;
+        }
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .cart-item-title {
+            font-size: 16px;
+        }
+        .cart-item-price {
+            font-size: 16px;
+            color: var(--primary);
+        }
+        .cart-overlay {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.3);
+            z-index: 1500;
+            display: none;
+        }
+        .cart-overlay.active {
+            display: block;
+        }
+        .add-to-cart-btn {
+            margin-top: 10px;
+            background: var(--primary);
+            color: #fff;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 15px;
+            width: 100%;
+            transition: background 0.2s;
+        }
+        .add-to-cart-btn:hover {
+            background: #20bf6b;
+        }
+    </style>
 </head>
 <body>
     <!-- Header -->
@@ -100,6 +175,18 @@
         </div>
     </div>
     <div class="overlay" id="overlay"></div>
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <span>Shopping Cart</span>
+            <button id="close-cart" style="background:none;border:none;font-size:20px;float:right;cursor:pointer;">&times;</button>
+        </div>
+        <div class="cart-items" id="cart-items"></div>
+        <div class="cart-footer">
+            <div id="cart-total"></div>
+            <button id="checkout-btn" class="banner-btn" style="width:100%;margin-top:10px;">Checkout</button>
+        </div>
+    </div>
+    <div class="cart-overlay" id="cart-overlay"></div>
 
     <!-- Banner -->
     <section class="banner">
@@ -135,14 +222,17 @@
                 <div class="product-details">
                     <h3 class="product-title">Wireless Bluetooth Earbuds</h3>
                     <div class="product-price">
-                        <div class="current-price">$49.99</div>
-                        <div class="original-price">$69.99</div>
+                        <div class="current-price">Rs.1199</div>
+                        <div class="original-price">Rs.1499</div>
                     </div>
                     <div class="product-rating">
                         <div class="rating-stars">★★★★☆</div>
                         <div>(245)</div>
                     </div>
                 </div>
+                <button class="add-to-cart-btn" 
+                    data-title="Wireless Bluetooth Earbuds" 
+                    data-price="49.99">Add to Cart</button>
             </div>
             <div class="product-card">
                 <div class="product-img-container">
@@ -152,14 +242,17 @@
                 <div class="product-details">
                     <h3 class="product-title">Smart Watch Series 5</h3>
                     <div class="product-price">
-                        <div class="current-price">$129.99</div>
-                        <div class="original-price">$239.99</div>
+                        <div class="current-price">Rs.1299</div>
+                        <div class="original-price">Rs.2399</div>
                     </div>
                     <div class="product-rating">
                         <div class="rating-stars">★★★★★</div>
                         <div>(534)</div>
                     </div>
                 </div>
+                <button class="add-to-cart-btn" 
+                    data-title="Smart Watch Series 5" 
+                    data-price="129.99">Add to Cart</button>
             </div>
             <div class="product-card">
                 <div class="product-img-container">
@@ -169,14 +262,17 @@
                 <div class="product-details">
                     <h3 class="product-title">Portable Power Bank 20000mAh</h3>
                     <div class="product-price">
-                        <div class="current-price">$35.99</div>
-                        <div class="original-price">$44.99</div>
+                        <div class="current-price">Rs.1599</div>
+                        <div class="original-price">Rs.1999</div>
                     </div>
                     <div class="product-rating">
                         <div class="rating-stars">★★★★☆</div>
                         <div>(187)</div>
                     </div>
                 </div>
+                <button class="add-to-cart-btn" 
+                    data-title="Portable Power Bank 20000mAh" 
+                    data-price="35.99">Add to Cart</button>
             </div>
             <div class="product-card">
                 <div class="product-img-container">
@@ -186,14 +282,17 @@
                 <div class="product-details">
                     <h3 class="product-title">Men's Casual Sneakers</h3>
                     <div class="product-price">
-                        <div class="current-price">$39.99</div>
-                        <div class="original-price">$79.99</div>
+                        <div class="current-price">Rs.3999</div>
+                        <div class="original-price">Rs.7999</div>
                     </div>
                     <div class="product-rating">
                         <div class="rating-stars">★★★★☆</div>
                         <div>(98)</div>
                     </div>
                 </div>
+                <button class="add-to-cart-btn" 
+                    data-title="Men's Casual Sneakers" 
+                    data-price="39.99">Add to Cart</button>
             </div>
             <div class="product-card">
                 <div class="product-img-container">
@@ -203,14 +302,17 @@
                 <div class="product-details">
                     <h3 class="product-title">Smartphone Holder & Stand</h3>
                     <div class="product-price">
-                        <div class="current-price">$9.99</div>
-                        <div class="original-price">$14.99</div>
+                        <div class="current-price">Rs.999</div>
+                        <div class="original-price">Rs.1499</div>
                     </div>
                     <div class="product-rating">
                         <div class="rating-stars">★★★★★</div>
                         <div>(356)</div>
                     </div>
                 </div>
+                <button class="add-to-cart-btn" 
+                    data-title="Smartphone Holder & Stand" 
+                    data-price="9.99">Add to Cart</button>
             </div>
         </div>
     </section>
@@ -292,14 +394,17 @@
             <div class="product-details">
                 <h3 class="product-title">Wireless Gaming Mouse</h3>
                 <div class="product-price">
-                    <div class="current-price">$29.99</div>
-                    <div class="original-price">$34.99</div>
+                    <div class="current-price">Rs.2999</div>
+                    <div class="original-price">Rs.3499</div>
                 </div>
                 <div class="product-rating">
                     <div class="rating-stars">★★★★☆</div>
                     <div>(122)</div>
                 </div>
             </div>
+            <button class="add-to-cart-btn" 
+                data-title="Wireless Gaming Mouse" 
+                data-price="29.99">Add to Cart</button>
         </div>
         <div class="product-card">
             <div class="product-img-container">
@@ -309,14 +414,17 @@
             <div class="product-details">
                 <h3 class="product-title">Mechanical Keyboard RGB</h3>
                 <div class="product-price">
-                    <div class="current-price">$59.99</div>
-                    <div class="original-price">$79.99</div>
+                    <div class="current-price">Rs.5999</div>
+                    <div class="original-price">Rs.7999</div>
                 </div>
                 <div class="product-rating">
                     <div class="rating-stars">★★★★★</div>
                     <div>(287)</div>
                 </div>
             </div>
+            <button class="add-to-cart-btn" 
+                data-title="Mechanical Keyboard RGB" 
+                data-price="59.99">Add to Cart</button>
         </div>
         <div class="product-card">
             <div class="product-img-container">
@@ -325,13 +433,16 @@
             <div class="product-details">
                 <h3 class="product-title">Smart Home Security Camera</h3>
                 <div class="product-price">
-                    <div class="current-price">$89.99</div>
+                    <div class="current-price">Rs.8999</div>
                 </div>
                 <div class="product-rating">
                     <div class="rating-stars">★★★★☆</div>
                     <div>(156)</div>
                 </div>
             </div>
+            <button class="add-to-cart-btn" 
+                data-title="Smart Home Security Camera" 
+                data-price="89.99">Add to Cart</button>
         </div>
         <div class="product-card">
             <div class="product-img-container">
@@ -341,14 +452,17 @@
             <div class="product-details">
                 <h3 class="product-title">Electric Toothbrush Pro</h3>
                 <div class="product-price">
-                    <div class="current-price">$44.99</div>
-                    <div class="original-price">$74.99</div>
+                    <div class="current-price">Rs.4499</div>
+                    <div class="original-price">Rs.7499</div>
                 </div>
                 <div class="product-rating">
                     <div class="rating-stars">★★★★★</div>
                     <div>(423)</div>
                 </div>
             </div>
+            <button class="add-to-cart-btn" 
+                data-title="Electric Toothbrush Pro" 
+                data-price="44.99">Add to Cart</button>
         </div>
         <div class="product-card">
             <div class="product-img-container">
@@ -358,14 +472,17 @@
             <div class="product-details">
                 <h3 class="product-title">Fitness Tracker Watch</h3>
                 <div class="product-price">
-                    <div class="current-price">$55.99</div>
-                    <div class="original-price">$69.99</div>
+                    <div class="current-price">Rs.5599</div>
+                    <div class="original-price">Rs.6999</div>
                 </div>
                 <div class="product-rating">
                     <div class="rating-stars">★★★★☆</div>
                     <div>(198)</div>
                 </div>
             </div>
+            <button class="add-to-cart-btn" 
+                data-title="Fitness Tracker Watch" 
+                data-price="55.99">Add to Cart</button>
         </div>
     </div>
 </section>
@@ -445,13 +562,16 @@
             <div class="product-details">
                 <h3 class="product-title">Bluetooth Speaker Waterproof</h3>
                 <div class="product-price">
-                    <div class="current-price">$39.99</div>
+                    <div class="current-price">Rs.3999</div>
                 </div>
                 <div class="product-rating">
                     <div class="rating-stars">★★★★☆</div>
                     <div>(45)</div>
                 </div>
             </div>
+            <button class="add-to-cart-btn" 
+                data-title="Bluetooth Speaker Waterproof" 
+                data-price="39.99">Add to Cart</button>
         </div>
         <div class="product-card">
             <div class="product-img-container">
@@ -461,13 +581,16 @@
             <div class="product-details">
                 <h3 class="product-title">Wireless Charging Pad</h3>
                 <div class="product-price">
-                    <div class="current-price">$24.99</div>
+                    <div class="current-price">Rs.2499</div>
                 </div>
                 <div class="product-rating">
                     <div class="rating-stars">★★★★★</div>
                     <div>(32)</div>
                 </div>
             </div>
+            <button class="add-to-cart-btn" 
+                data-title="Wireless Charging Pad" 
+                data-price="24.99">Add to Cart</button>
         </div>
         <div class="product-card">
             <div class="product-img-container">
@@ -477,13 +600,16 @@
             <div class="product-details">
                 <h3 class="product-title">Smartphone Camera Lens Kit</h3>
                 <div class="product-price">
-                    <div class="current-price">$19.99</div>
+                    <div class="current-price">Rs.39999</div>
                 </div>
                 <div class="product-rating">
                     <div class="rating-stars">★★★★☆</div>
                     <div>(18)</div>
                 </div>
             </div>
+            <button class="add-to-cart-btn" 
+                data-title="Smartphone Camera Lens Kit" 
+                data-price="19.99">Add to Cart</button>
         </div>
         <div class="product-card">
             <div class="product-img-container">
@@ -493,13 +619,16 @@
             <div class="product-details">
                 <h3 class="product-title">Smart LED Light Bulb</h3>
                 <div class="product-price">
-                    <div class="current-price">$14.99</div>
+                    <div class="current-price">Rs.5999</div>
                 </div>
                 <div class="product-rating">
                     <div class="rating-stars">★★★★☆</div>
                     <div>(27)</div>
                 </div>
             </div>
+            <button class="add-to-cart-btn" 
+                data-title="Smart LED Light Bulb" 
+                data-price="14.99">Add to Cart</button>
         </div>
         <div class="product-card">
             <div class="product-img-container">
@@ -509,13 +638,16 @@
             <div class="product-details">
                 <h3 class="product-title">Foldable Laptop Stand</h3>
                 <div class="product-price">
-                    <div class="current-price">$29.99</div>
+                    <div class="current-price">Rs.2999</div>
                 </div>
                 <div class="product-rating">
                     <div class="rating-stars">★★★★★</div>
                     <div>(12)</div>
                 </div>
             </div>
+            <button class="add-to-cart-btn" 
+                data-title="Foldable Laptop Stand" 
+                data-price="29.99">Add to Cart</button>
         </div>
     </div>
 </section>
@@ -660,7 +792,7 @@
 
     // Simulate Add to Cart functionality
     function addToCart(productId, productName, price) {
-        console.log(`Added to cart: ${productName} for $${price}`);
+        console.log(`Added to cart: ${productName} for Rs.${price}`);
         // Here you would typically:
         // 1. Update cart count
         // 2. Show notification
@@ -669,6 +801,77 @@
         // Simple notification
         alert(`${productName} added to your cart!`);
     }
+
+    // --- Cart Functionality ---
+    let cart = [];
+
+    function openCart() {
+        document.getElementById('cart-sidebar').classList.add('active');
+        document.getElementById('cart-overlay').classList.add('active');
+        document.body.style.overflow = 'hidden';
+        renderCart();
+    }
+    function closeCart() {
+        document.getElementById('cart-sidebar').classList.remove('active');
+        document.getElementById('cart-overlay').classList.remove('active');
+        document.body.style.overflow = '';
+    }
+    document.getElementById('cart-overlay').addEventListener('click', closeCart);
+    document.getElementById('close-cart').addEventListener('click', closeCart);
+
+    function renderCart() {
+        const cartItemsDiv = document.getElementById('cart-items');
+        cartItemsDiv.innerHTML = '';
+        let total = 0;
+        if (cart.length === 0) {
+            cartItemsDiv.innerHTML = '<p>Your cart is empty.</p>';
+        } else {
+            cart.forEach((item, idx) => {
+                total += item.price * item.qty;
+                cartItemsDiv.innerHTML += `
+                    <div class="cart-item">
+                        <span class="cart-item-title">${item.title} x${item.qty}</span>
+                        <span class="cart-item-price">Rs.${(item.price * item.qty).toFixed(2)}</span>
+                        <button style="margin-left:10px;color:red;background:none;border:none;cursor:pointer;" onclick="removeFromCart(${idx})">&times;</button>
+                    </div>
+                `;
+            });
+        }
+        document.getElementById('cart-total').textContent = 'Total: Rs.' + total.toFixed(2);
+    }
+    function removeFromCart(idx) {
+        cart.splice(idx, 1);
+        renderCart();
+    }
+
+    // Add to Cart button logic
+    document.querySelectorAll('.add-to-cart-btn').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            const title = this.dataset.title;
+            const price = parseFloat(this.dataset.price);
+            // Check if already in cart
+            const found = cart.find(item => item.title === title && item.price === price);
+            if (found) {
+                found.qty += 1;
+            } else {
+                cart.push({ title, price, qty: 1 });
+            }
+            openCart();
+        });
+    });
+
+    // Checkout button
+    document.getElementById('checkout-btn').addEventListener('click', function() {
+        if (cart.length === 0) {
+            alert('Your cart is empty!');
+            return;
+        }
+        alert('Proceeding to checkout!\n\n' + cart.map(item => `${item.title} x${item.qty} = Rs.${(item.price*item.qty).toFixed(2)}`).join('\n') + `\n\nTotal: Rs.${cart.reduce((a,b)=>a+b.price*b.qty,0).toFixed(2)}`);
+        cart = [];
+        renderCart();
+        closeCart();
+    });
 
     // Add event listeners for category navigation
     const categoryLinks = document.querySelectorAll('.nav-category');
@@ -694,11 +897,11 @@
     searchButton.addEventListener('click', () => {
         const searchTerm = searchBar.value.trim();
         if (searchTerm) {
-            console.log(`Searching for: ${searchTerm}`);
+            console.log(`Searching for: Rs.{searchTerm}`);
             // Here you would typically:
             // 1. Navigate to search results page
             // 2. Or filter products in current page
-            alert(`Search results for: ${searchTerm}`);
+            alert(`Search results for: Rs.{searchTerm}`);
         }
     });
 
