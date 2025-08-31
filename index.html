@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopEase - Online Shopping</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="top-header">
+            <div class="top-header-left">
+                <a href="#"><i class="fas fa-download"></i> Download App</a>
+                <a href="#"><i class="fas fa-truck"></i> Track Order</a>
+            </div>
+            <div class="top-header-right">
+                <a href="#"><i class="fas fa-headset"></i> Customer Care</a>
+                <a href="#"><i class="fas fa-sign-in-alt"></i> Login / Register</a>
+            </div>
+        </div>
+        <div class="main-header">
+            <button class="mobile-menu-btn" id="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="logo">ShopEase</div>
+            <div class="search-bar">
+                <input type="text" placeholder="Search for products, brands and more">
+                <button><i class="fas fa-search"></i> Search</button>
+            </div>
+            <div class="header-actions">
+                <a href="#">
+                    <i class="far fa-heart"></i>
+                    <span>Wishlist</span>
+                </a>
+                <a href="#">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span>Cart</span>
+                </a>
+                <a href="#">
+                    <i class="far fa-user"></i>
+                    <span>Account</span>
+                </a>
+            </div>
+        </div>
+        <nav class="nav-categories">
+            <a href="#" class="nav-category active">All Categories</a>
+            <a href="#" class="nav-category">Electronics</a>
+            <a href="#" class="nav-category">Fashion</a>
+            <a href="#" class="nav-category">Home & Living</a>
+            <a href="#" class="nav-category">Beauty & Health</a>
+            <a href="#" class="nav-category">Sports & Outdoor</a>
+            <a href="#" class="nav-category">Toys & Kids</a>
+            <a href="#" class="nav-category">Groceries</a>
+            <a href="#" class="nav-category">Automotive</a>
+        </nav>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu">
+        <div class="mobile-menu-header">
+            <div class="logo">ShopEase</div>
+            <button class="mobile-menu-close" id="mobile-menu-close">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="mobile-menu-items">
+            <div class="mobile-menu-category">
+                <h3>Account</h3>
+                <ul class="mobile-menu-links">
+                    <li><a href="#"><i class="far fa-user"></i> My Account</a></li>
+                    <li><a href="#"><i class="far fa-heart"></i> My Wishlist</a></li>
+                    <li><a href="#"><i class="fas fa-shopping-cart"></i> My Cart</a></li>
+                    <li><a href="#"><i class="fas fa-box"></i> My Orders</a></li>
+                </ul>
+            </div>
+            <div class="mobile-menu-category">
+                <h3>Categories</h3>
+                <ul class="mobile-menu-links">
+                    <li><a href="#">Electronics</a></li>
+                    <li><a href="#">Fashion</a></li>
+                    <li><a href="#">Home & Living</a></li>
+                    <li><a href="#">Beauty & Health</a></li>
+                    <li><a href="#">Sports & Outdoor</a></li>
+                    <li><a href="#">Toys & Kids</a></li>
+                    <li><a href="#">Groceries</a></li>
+                    <li><a href="#">Automotive</a></li>
+                </ul>
+            </div>
+            <div class="mobile-menu-category">
+                <h3>Help & Settings</h3>
+                <ul class="mobile-menu-links">
+                    <li><a href="#"><i class="fas fa-headset"></i> Customer Service</a></li>
+                    <li><a href="#"><i class="fas fa-download"></i> Download App</a></li>
+                    <li><a href="#"><i class="fas fa-language"></i> Language</a></li>
+                    <li><a href="#"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Banner -->
+    <section class="banner">
+        <img src="Free E-commerce Product Banner Design with Green Colors.jpg" alt="Banner" class="banner-img">
+        <div class="banner-content">
+            <h1>Super Sale Weekend</h1>
+            <p>Up to 70% off on top brands</p>
+            <button class="banner-btn">Shop Now</button>
+        </div>
+    </section>
+
+    <!-- Flash Sale -->
+    <section class="flash-sale">
+        <div class="section-header">
+            <div class="section-title">
+                <i class="fas fa-bolt"></i> Flash Sale
+                <div class="countdown">
+                    <div class="countdown-item">02</div>
+                    <div class="countdown-item">:</div>
+                    <div class="countdown-item">45</div>
+                    <div class="countdown-item">:</div>
+                    <div class="countdown-item">30</div>
+                </div>
+            </div>
+            <a href="#" class="view-all">View All</a>
+        </div>
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="product-img-container">
+                    <img src="305660353_490426239761358_138710072658736993_n.jpg" alt="Product" class="product-img">
+                    <div class="discount-badge">-30%</div>
+                </div>
+                <div class="product-details">
+                    <h3 class="product-title">Wireless Bluetooth Earbuds</h3>
+                    <div class="product-price">
+                        <div class="current-price">$49.99</div>
+                        <div class="original-price">$69.99</div>
+                    </div>
+                    <div class="product-rating">
+                        <div class="rating-stars">★★★★☆</div>
+                        <div>(245)</div>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img-container">
+                    <img src="305660353_490426239761358_138710072658736993_n.jpg" alt="Product" class="product-img">
+                    <div class="discount-badge">-45%</div>
+                </div>
+                <div class="product-details">
+                    <h3 class="product-title">Smart Watch Series 5</h3>
+                    <div class="product-price">
+                        <div class="current-price">$129.99</div>
+                        <div class="original-price">$239.99</div>
+                    </div>
+                    <div class="product-rating">
+                        <div class="rating-stars">★★★★★</div>
+                        <div>(534)</div>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img-container">
+                    <img src="305660353_490426239761358_138710072658736993_n.jpg" alt="Product" class="product-img">
+                    <div class="discount-badge">-20%</div>
+                </div>
+                <div class="product-details">
+                    <h3 class="product-title">Portable Power Bank 20000mAh</h3>
+                    <div class="product-price">
+                        <div class="current-price">$35.99</div>
+                        <div class="original-price">$44.99</div>
+                    </div>
+                    <div class="product-rating">
+                        <div class="rating-stars">★★★★☆</div>
+                        <div>(187)</div>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img-container">
+                    <img src="305660353_490426239761358_138710072658736993_n.jpg" alt="Product" class="product-img">
+                    <div class="discount-badge">-50%</div>
+                </div>
+                <div class="product-details">
+                    <h3 class="product-title">Men's Casual Sneakers</h3>
+                    <div class="product-price">
+                        <div class="current-price">$39.99</div>
+                        <div class="original-price">$79.99</div>
+                    </div>
+                    <div class="product-rating">
+                        <div class="rating-stars">★★★★☆</div>
+                        <div>(98)</div>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img-container">
+                    <img src="305660353_490426239761358_138710072658736993_n.jpg" alt="Product" class="product-img">
+                    <div class="discount-badge">-35%</div>
+                </div>
+                <div class="product-details">
+                    <h3 class="product-title">Smartphone Holder & Stand</h3>
+                    <div class="product-price">
+                        <div class="current-price">$9.99</div>
+                        <div class="original-price">$14.99</div>
+                    </div>
+                    <div class="product-rating">
+                        <div class="rating-stars">★★★★★</div>
+                        <div>(356)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="categories">
+        <div class="section-header">
+            <div class="section-title">
+                <i class="fas fa-th-large"></i> Popular Categories
+            </div>
+            <a href="#" class="view-all">View All</a>
+        </div>
+        <div class="category-grid">
+            <a href="#" class="category-card">
+                <div class="category-icon">
+                    <i class="fas fa-mobile-alt"></i>
+                </div>
+                <div class="category-name">Smartphones</div>
+            </a>
+            <a href="#" class="category-card">
+                <div class="category-icon">
+                    <i class="fas fa-laptop"></i>
+                </div>
+                <div class="category-name">Laptops</div>
+            </a>
+            <a href="#" class="category-card">
+                <div class="category-icon">
+                    <i class="fas fa-tshirt"></i>
+                </div>
+                <div class="category-name">Fashion</div>
+            </a>
+            <a href="#" class="category-card">
+                <div class="category-icon">
+                    <i class="fas fa-home"></i>
+                </div>
+                <div class="category-name">Home</div>
+            </a>
+            <a href="#" class="category-card">
+                <div class="category-icon">
+                    <i class="fas fa-heartbeat"></i>
+                </div>
+                <div class="category-name">Health</div>
+            </a>
+            <a href="#" class="category-card">
+                <div class="category-icon">
+                    <i class="fas fa-utensils"></i>
+                </div>
+                <div class="category-name">Kitchen</div>
+            </a>
+            <a href="#" class="category-card">
+                <div class="category-icon">
+                    <i class="fas fa-baby"></i>
+                </div>
+                <div class="category-name">Baby</div>
+            </a>
+            <a href="#" class="category-card">
+                <div class="category-icon">
+                    <i class="fas fa-futbol"></i>
+                </div>
+                <div class="category-name">Sports</div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+<section class="featured-products">
+    <div class="section-header">
+        <div class="section-title">
+            <i class="fas fa-star"></i> Featured Products
+        </div>
+        <a href="#" class="view-all">View All</a>
+    </div>
+    <div class="product-grid">
+        <div class="product-card">
+            <div class="product-img-container">
+                <img src="305660353_490426239761358_138710072658736993_n.jpg" alt="Product" class="product-img">
+                <div class="discount-badge">-15%</div>
+            </div>
+            <div class="product-details">
+                <h3 class="product-title">Wireless Gaming Mouse</h3>
+                <div class="product-price">
+                    <div class="current-price">$29.99</div>
+                    <div class="original-price">$34.99</div>
+                </div>
+                <div class="product-rating">
+                    <div class="rating-stars">★★★★☆</div>
+                    <div>(122)</div>
+                </div>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-img-container">
+                <img src="305660353_490426239761358_138710072658736993_n.jpg" alt="Product" class="product-img">
+                <div class="discount-badge">-25%</div>
+            </div>
+            <div class="product-details">
+                <h3 class="product-title">Mechanical Keyboard RGB</h3>
+                <div class="product-price">
+                    <div class="current-price">$59.99</div>
+                    <div class="original-price">$79.99</div>
+                </div>
+                <div class="product-rating">
+                    <div class="rating-stars">★★★★★</div>
+                    <div>(287)</div>
+                </div>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-img-container">
+                <img src="305660353_490426239761358_138710072658736993_n.jpg" alt="Product" class="product-img">
+            </div>
+            <div class="product-details">
+                <h3 class="product-title">Smart Home Security Camera</h3>
+                <div class="product-price">
+                    <div class="current-price">$89.99</div>
+                </div>
+                <div class="product-rating">
+                    <div class="rating-stars">★★★★☆</div>
+                    <div>(156)</div>
+                </div>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-img-container">
+                <img src="305660353_490426239761358_138710072658736993_n.jpg" alt="Product" class="product-img">
+                <div class="discount-badge">-40%</div>
+            </div>
+            <div class="product-details">
+                <h3 class="product-title">Electric Toothbrush Pro</h3>
+                <div class="product-price">
+                    <div class="current-price">$44.99</div>
+                    <div class="original-price">$74.99</div>
+                </div>
+                <div class="product-rating">
+                    <div class="rating-stars">★★★★★</div>
+                    <div>(423)</div>
+                </div>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-img-container">
+                <img src="305660353_490426239761358_138710072658736993_n.jpg" alt="Product" class="product-img">
+                <div class="discount-badge">-20%</div>
+            </div>
+            <div class="product-details">
+                <h3 class="product-title">Fitness Tracker Watch</h3>
+                <div class="product-price">
+                    <div class="current-price">$55.99</div>
+                    <div class="original-price">$69.99</div>
+                </div>
+                <div class="product-rating">
+                    <div class="rating-stars">★★★★☆</div>
+                    <div>(198)</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Top Brands -->
+<section class="featured-products">
+    <div class="section-header">
+        <div class="section-title">
+            <i class="fas fa-crown"></i> Top Brands
+        </div>
+        <a href="#" class="view-all">View All</a>
+    </div>
+    <div class="category-grid">
+        <a href="#" class="category-card">
+            <div class="category-icon">
+                <i class="fab fa-apple"></i>
+            </div>
+            <div class="category-name">Apple</div>
+        </a>
+        <a href="#" class="category-card">
+            <div class="category-icon">
+                <i class="fab fa-samsung"></i>
+            </div>
+            <div class="category-name">Samsung</div>
+        </a>
+        <a href="#" class="category-card">
+            <div class="category-icon">
+                <i class="fab fa-nike"></i>
+            </div>
+            <div class="category-name">Nike</div>
+        </a>
+        <a href="#" class="category-card">
+            <div class="category-icon">
+                <i class="fab fa-xbox"></i>
+            </div>
+            <div class="category-name">Xbox</div>
+        </a>
+        <a href="#" class="category-card">
+            <div class="category-icon">
+                <i class="fab fa-playstation"></i>
+            </div>
+            <div class="category-name">Sony</div>
+        </a>
+        <a href="#" class="category-card">
+            <div class="category-icon">
+                <i class="fab fa-microsoft"></i>
+            </div>
+            <div class="category-name">Microsoft</div>
+        </a>
+    </div>
+</section>
+
+<!-- Banner 2 -->
+<section class="banner">
+    <img src="be88a25d-bfd4-4be1-b3b4-2757192af14c.jpg" alt="Banner" class="banner-img">
+    <div class="banner-content">
+        <h1>New Arrivals</h1>
+        <p>Discover the latest tech gadgets</p>
+        <button class="banner-btn">Explore Now</button>
+    </div>
+</section>
+
+<!-- New Arrivals -->
+<section class="featured-products">
+    <div class="section-header">
+        <div class="section-title">
+            <i class="fas fa-fire"></i> New Arrivals
+        </div>
+        <a href="#" class="view-all">View All</a>
+    </div>
+    <div class="product-grid">
+        <div class="product-card">
+            <div class="product-img-container">
+                <img src="305660353_490426239761358_138710072658736993_n.jpg" alt="Product" class="product-img">
+                <div class="discount-badge">NEW</div>
+            </div>
+            <div class="product-details">
+                <h3 class="product-title">Bluetooth Speaker Waterproof</h3>
+                <div class="product-price">
+                    <div class="current-price">$39.99</div>
+                </div>
+                <div class="product-rating">
+                    <div class="rating-stars">★★★★☆</div>
+                    <div>(45)</div>
+                </div>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-img-container">
+                <img src="305660353_490426239761358_138710072658736993_n.jpg" alt="Product" class="product-img">
+                <div class="discount-badge">NEW</div>
+            </div>
+            <div class="product-details">
+                <h3 class="product-title">Wireless Charging Pad</h3>
+                <div class="product-price">
+                    <div class="current-price">$24.99</div>
+                </div>
+                <div class="product-rating">
+                    <div class="rating-stars">★★★★★</div>
+                    <div>(32)</div>
+                </div>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-img-container">
+                <img src="305660353_490426239761358_138710072658736993_n.jpg" alt="Product" class="product-img">
+                <div class="discount-badge">NEW</div>
+            </div>
+            <div class="product-details">
+                <h3 class="product-title">Smartphone Camera Lens Kit</h3>
+                <div class="product-price">
+                    <div class="current-price">$19.99</div>
+                </div>
+                <div class="product-rating">
+                    <div class="rating-stars">★★★★☆</div>
+                    <div>(18)</div>
+                </div>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-img-container">
+                <img src="305660353_490426239761358_138710072658736993_n.jpg" alt="Product" class="product-img">
+                <div class="discount-badge">NEW</div>
+            </div>
+            <div class="product-details">
+                <h3 class="product-title">Smart LED Light Bulb</h3>
+                <div class="product-price">
+                    <div class="current-price">$14.99</div>
+                </div>
+                <div class="product-rating">
+                    <div class="rating-stars">★★★★☆</div>
+                    <div>(27)</div>
+                </div>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-img-container">
+                <img src="305660353_490426239761358_138710072658736993_n.jpg" alt="Product" class="product-img">
+                <div class="discount-badge">NEW</div>
+            </div>
+            <div class="product-details">
+                <h3 class="product-title">Foldable Laptop Stand</h3>
+                <div class="product-price">
+                    <div class="current-price">$29.99</div>
+                </div>
+                <div class="product-rating">
+                    <div class="rating-stars">★★★★★</div>
+                    <div>(12)</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="footer-content">
+        <div class="footer-column">
+            <h3>Customer Service</h3>
+            <ul class="footer-links">
+                <li><a href="#">Help Center</a></li>
+                <li><a href="#">How to Buy</a></li>
+                <li><a href="#">Track Your Order</a></li>
+                <li><a href="#">Returns & Refunds</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h3>About ShopEase</h3>
+            <ul class="footer-links">
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">ShopEase Blog</a></li>
+                <li><a href="#">ShopEase Careers</a></li>
+                <li><a href="#">Terms & Conditions</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h3>Payment Methods</h3>
+            <div class="payment-methods">
+                <div class="payment-method">Credit Card</div>
+                <div class="payment-method">Debit Card</div>
+                <div class="payment-method">PayPal</div>
+                <div class="payment-method">Apple Pay</div>
+                <div class="payment-method">Google Pay</div>
+                <div class="payment-method">Cash on Delivery</div>
+            </div>
+        </div>
+        <div class="footer-column">
+            <h3>Download App</h3>
+            <p>Get access to exclusive offers!</p>
+            <div class="app-download">
+                <a href="#" class="app-button">
+                    <i class="fab fa-apple"></i>
+                    <div>
+                        Download on the
+                        <strong>App Store</strong>
+                    </div>
+                </a>
+                <a href="#" class="app-button">
+                    <i class="fab fa-google-play"></i>
+                    <div>
+                        Get it on
+                        <strong>Google Play</strong>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="bottom-footer">
+        <p>&copy; 2025 ShopEase. All Rights Reserved.</p>
+    </div>
+</footer>
+
+<!-- JavaScript -->
+<script>
+    // Mobile Menu
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileMenuClose = document.getElementById('mobile-menu-close');
+    const overlay = document.getElementById('overlay');
+
+    mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.add('active');
+        overlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    });
+
+    mobileMenuClose.addEventListener('click', () => {
+        mobileMenu.classList.remove('active');
+        overlay.classList.remove('active');
+        document.body.style.overflow = '';
+    });
+
+    overlay.addEventListener('click', () => {
+        mobileMenu.classList.remove('active');
+        overlay.classList.remove('active');
+        document.body.style.overflow = '';
+    });
+
+    // Countdown Timer
+    function updateCountdown() {
+        const now = new Date();
+        const hours = 23 - now.getHours();
+        const minutes = 59 - now.getMinutes();
+        const seconds = 59 - now.getSeconds();
+
+        const countdownItems = document.querySelectorAll('.countdown-item');
+        countdownItems[0].textContent = hours.toString().padStart(2, '0');
+        countdownItems[2].textContent = minutes.toString().padStart(2, '0');
+        countdownItems[4].textContent = seconds.toString().padStart(2, '0');
+    }
+
+    // Update countdown every second
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+
+    // Product Cards Hover Effect
+    const productCards = document.querySelectorAll('.product-card');
+    
+    productCards.forEach(card => {
+        card.addEventListener('click', () => {
+            // Simulate going to product page
+            console.log('Product clicked');
+        });
+    });
+
+    // Banner Slideshow
+    const banners = document.querySelectorAll('.banner');
+    let currentBanner = 0;
+
+    function showBanner(index) {
+        banners.forEach((banner, i) => {
+            if (i === index) {
+                banner.style.display = 'block';
+            } else {
+                banner.style.display = 'none';
+            }
+        });
+    }
+
+    function nextBanner() {
+        currentBanner = (currentBanner + 1) % banners.length;
+        showBanner(currentBanner);
+    }
+
+    // Change banner every 5 seconds
+    if (banners.length > 1) {
+        setInterval(nextBanner, 5000);
+        showBanner(0);
+    }
+
+    // Simulate Add to Cart functionality
+    function addToCart(productId, productName, price) {
+        console.log(`Added to cart: ${productName} for $${price}`);
+        // Here you would typically:
+        // 1. Update cart count
+        // 2. Show notification
+        // 3. Update localStorage or send to backend
+        
+        // Simple notification
+        alert(`${productName} added to your cart!`);
+    }
+
+    // Add event listeners for category navigation
+    const categoryLinks = document.querySelectorAll('.nav-category');
+    categoryLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            // Remove active class from all links
+            categoryLinks.forEach(l => l.classList.remove('active'));
+            // Add active class to clicked link
+            link.classList.add('active');
+            
+            // Here you would typically:
+            // 1. Load products for the selected category
+            // 2. Update URL
+            console.log(`Category selected: ${link.textContent}`);
+        });
+    });
+
+    // Simulate Search functionality
+    const searchBar = document.querySelector('.search-bar input');
+    const searchButton = document.querySelector('.search-bar button');
+
+    searchButton.addEventListener('click', () => {
+        const searchTerm = searchBar.value.trim();
+        if (searchTerm) {
+            console.log(`Searching for: ${searchTerm}`);
+            // Here you would typically:
+            // 1. Navigate to search results page
+            // 2. Or filter products in current page
+            alert(`Search results for: ${searchTerm}`);
+        }
+    });
+
+    // Allow search on Enter key
+    searchBar.addEventListener('keyup', (e) => {
+        if (e.key === 'Enter') {
+            searchButton.click();
+        }
+    });
+
+    // Handle window resize for responsive adjustments
+    window.addEventListener('resize', () => {
+        // Reset mobile menu when resizing to desktop
+        if (window.innerWidth > 768) {
+            mobileMenu.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    });
+
+    // Simulate lazy loading for images
+    document.addEventListener('DOMContentLoaded', () => {
+        const lazyImages = document.querySelectorAll('.product-img');
+        
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const image = entry.target;
+                        // In a real implementation, you would set the src here
+                        // image.src = image.dataset.src;
+                        observer.unobserve(image);
+                    }
+                });
+            });
+            
+            lazyImages.forEach(img => imageObserver.observe(img));
+        }
+    });
+</script>
+</body>
+</html>
